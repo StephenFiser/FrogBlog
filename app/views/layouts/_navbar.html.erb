@@ -1,0 +1,39 @@
+<div class="collapse" id="exCollapsingNavbar">
+  <div class="collapse-bg p-a-1">
+    <div class='card'>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <%= link_to 'Blog', root_path, class: "nav-link #{yield(:blog_active)}" %>
+        </li>
+        <li class="list-group-item">
+          <%= link_to 'About', about_path, class: "nav-link #{yield(:about_active)}" %>
+        </li>
+        <li class="list-group-item">
+          <%= link_to 'Contact', contact_path, class: "nav-link #{yield(:contact_active)}" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-light bg-faded">
+  <div class='container'>
+    <a class='navbar-brand' href='/'>
+      Frog<span class='light'>blog</span>
+    </a>
+    <button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+      &#9776;
+    </button>
+    <ul class="nav navbar-nav pull-sm-right hidden-xs-down">
+      <li class="nav-item">
+        <%= link_to 'Blog', root_path, class: "nav-link #{yield(:blog_active)}" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'About', about_path, class: "nav-link #{yield(:about_active)}" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Contact', contact_path, class: "nav-link #{yield(:contact_active)}" %>
+      </li>
+    </ul>
+  </div>
+</nav>
