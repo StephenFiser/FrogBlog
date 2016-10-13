@@ -1,0 +1,6 @@
+<tr>
+  <td><%= link_to post.title, authors_post_path(post) %></td>
+  <td></td>
+  <td><%= link_to 'Edit', edit_authors_post_path(post), class: 'btn btn-sm btn-warning' %></td>
+  <td><%= link_to 'Remove', authors_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %></td>
+</tr>

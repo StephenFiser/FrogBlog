@@ -41,6 +41,7 @@ GEM
     arel (7.1.1)
     autoprefixer-rails (6.3.7)
       execjs
+    bcrypt (3.1.11)
     bootstrap (4.0.0.alpha3.1)
       autoprefixer-rails (>= 6.0.3)
       sass (>= 3.4.19)
@@ -55,6 +56,12 @@ GEM
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
+    devise (4.1.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 5.1)
+      responders
+      warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.14)
@@ -88,6 +95,7 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
+    orm_adapter (0.5.0)
     pkg-config (1.1.7)
     puma (3.6.0)
     rack (2.0.1)
@@ -120,6 +128,8 @@ GEM
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    responders (2.2.0)
+      railties (>= 4.2.0, < 5.1)
     sass (3.4.22)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -149,6 +159,8 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.1)
       execjs (>= 0.3.0, < 3)
+    warden (1.2.6)
+      rack (>= 1.0)
     web-console (3.3.1)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -165,6 +177,7 @@ DEPENDENCIES
   bootstrap (~> 4.0.0.alpha3.1)
   byebug
   coffee-rails (~> 4.2)
+  devise
   friendly_id (~> 5.1.0)
   jbuilder (~> 2.5)
   jquery-rails
