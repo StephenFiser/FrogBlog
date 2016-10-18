@@ -4,7 +4,7 @@ module Blog
     # GET /posts
     # GET /posts.json
     def index
-      @posts = Post.most_recent
+      @posts = Post.most_recent.published
     end
 
     # GET /posts/1
