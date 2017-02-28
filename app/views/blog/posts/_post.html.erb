@@ -3,6 +3,7 @@
     <div class="card-topper" style='background-image: url(<%= post.banner_image_url %>);'></div>
     <div class="card-block">
       <h4 class="card-title"><%= link_to post.title, post %></h4>
+      <p><%= raw post.tags.map { |t| link_to t.name, posts_path(tag: t.name) }.join(', ') %></p>
       <p class="published-date"><%= post.display_day_published %></p>
       <p class="card-text"><%= truncate(post.description, length: 130) %></p>
       <%= link_to 'Read', post, class: 'btn btn-read' %>
