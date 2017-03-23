@@ -2,9 +2,10 @@
 <% provide(:blog_active, 'active') %>
 
 <div class="row">
-  <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-xs-center">
+  <div class="col-md-1 col-lg-2"></div>
+  <div class="col-md-10 col-lg-8 text-xs-center">
     <h1><%= @post.title %></h1>
-    <p><%= @post.display_day_published %></p>
+    <h6><%= @post.display_day_published %></h6>
     <%= @post.body.html_safe %>
 
     <div id="disqus_thread"></div>

@@ -1,0 +1,25 @@
+body {
+  background-color: $light-gray;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  color: $primary-text-color;
+}
+
+h1, .card-title {
+  font-weight: bold;
+}
+
+h6 {
+  color: $secondary-text-color;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+p, p span {
+  font-family: 'Merriweather', serif !important;
+  font-size: 20px;
+}

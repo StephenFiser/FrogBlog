@@ -43,11 +43,15 @@
         <%= link_to 'Contact', contact_path, class: "nav-link #{yield(:contact_active)}" %>
       </li>
       <% if author_signed_in? %>
-        <li class="nav-item">
-          <%= link_to 'My posts', authors_posts_path, class: "nav-link #{yield(:author)}" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Logout', destroy_author_session_path, method: :delete, class: "nav-link" %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle <%= yield(:author) %>" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Author
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <%= link_to 'My posts', authors_posts_path, class: "dropdown-item" %>
+            <%= link_to 'Account', authors_account_path, class: "dropdown-item" %>
+            <%= link_to 'Logout', destroy_author_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
         </li>
       <% end %>
     </ul>
