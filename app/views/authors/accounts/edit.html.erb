@@ -10,6 +10,9 @@
             </div>
           </div>
           <ul class="list-group list-group-flush">
+            <li class='list-group-item'>
+              <%= image_tag(current_author.gravatar_image_url) %>
+            </li>
             <li class="list-group-item">
               <div class="field">
                 <%= f.label :name %>
@@ -19,7 +22,7 @@
             <li class="list-group-item">
               <div class="field">
                 <%= f.label :email %>
-                <%= f.email_field :email, value: current_author.email, class: 'form-control' %>
+                <%= f.text_field :email, value: current_author.email, class: 'form-control' %>
               </div>
             </li>
             <li class="list-group-item">

@@ -11,11 +11,19 @@
 
   <body>
     <%= render 'layouts/navbar' %>
-    <% if notice || alert %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    <% end %>
     <div class="container <%= controller_name %> <%= action_name %>">
+
+      <% if flash.any? %>
+        <% flash.keys.each do |key| %>
+          <div class="alert alert-<%= key.to_s %> alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <%= flash[key] %>
+          </div>
+        <% end %>
+      <% end %>
+
       <%= yield %>
     </div>
   </body>

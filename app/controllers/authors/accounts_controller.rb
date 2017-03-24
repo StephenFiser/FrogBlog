@@ -6,16 +6,25 @@ module Authors
     end
 
     def update_info
-      current_author.update(author_info_params)
+      if current_author.update(author_info_params)
+        flash[:success] = 'Successfully saved info.'
+      else
+        flash[:danger] = current_author.display_error_messages
+      end
       redirect_to authors_account_path
     end
 
     def change_password
-      if current_author.valid_password?(author_password_params[:current_password])
-        current_author.update(
-          password: author_password_params[:new_password],
-          password_confirmation: author_password_params[:new_password_confirmation]
-        )
+      author = current_author
+      if author.valid_password?(author_password_params[:current_password])
+        if author.change_password(author_password_params)
+          sign_in(author, bypass: true)
+          flash[:success] = 'Successfully changed password.'
+        else
+          flash[:danger] = author.display_error_messages
+        end
+      else
+        flash[:danger] = 'Current password was incorrect.'
       end
       redirect_to authors_account_path
     end
