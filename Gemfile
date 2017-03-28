@@ -34,6 +34,11 @@ gem 'devise'
 # gem 'capistrano-rails', group: :development
 
 gem 'bootstrap', '4.0.0.alpha3'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
+
 gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 
 gem 'annotate'
