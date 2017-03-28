@@ -19,6 +19,14 @@
         color: $primary-color-text !important;
       }
     }
+    .nav-item.author-nav {
+      img {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        border: 1px solid $primary-color-light;
+      }
+    }
 }
 
 .collapse-bg {
